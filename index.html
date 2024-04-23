@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art em JavaScript</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="pixelCanvas" width="200" height="200"></canvas>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const canvas = document.getElementById('pixelCanvas');
+            const ctx = canvas.getContext('2d');
+            const pixelSize = 15; // Tamanho de cada pixel em pixels
+
+            function drawPixel(x, y, color) {
+                ctx.fillStyle = color;
+                // ctx.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
+                ctx.fillRect(x, y);
+            }
+
+            // Exemplo: desenhando um rosto
+            drawPixel(0, 1, 'black');
+            drawPixel(5, 3, 'black');
+            // drawPixel(8, 5, 'black');
+            // drawPixel(9, 5, 'black');
+            // drawPixel(6, 6, 'black');
+            // drawPixel(8, 6, 'black');
+            // drawPixel(7, 7, 'black');
+            // drawPixel(6, 9, 'black');
+            // drawPixel(8, 9, 'black');
+
+            // Você pode adicionar mais pixels para criar sua própria pixel art
+
+            // Lembre-se de ajustar o tamanho do canvas conforme necessário e também o tamanho dos pixels
+
+        });
+    </script>
+</body>
+</html>
