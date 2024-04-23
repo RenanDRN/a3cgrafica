@@ -1,46 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Art em JavaScript</title>
-    <style>
-        canvas {
-            border: 1px solid black;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Art de uma Maçã</title>
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    canvas {
+        border: 1px solid black;
+    }
+</style>
 </head>
 <body>
-    <canvas id="pixelCanvas" width="200" height="200"></canvas>
+<canvas id="macaCanvas" width="200" height="200"></canvas>
+<script>
+   // Obtém o elemento de canvas com o id "macaCanvas" e seu contexto de desenho 2D.
+const canvas = document.getElementById('macaCanvas');
+const ctx = canvas.getContext('2d');
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const canvas = document.getElementById('pixelCanvas');
-            const ctx = canvas.getContext('2d');
-            const pixelSize = 15; // Tamanho de cada pixel em pixels
+// Define uma matriz chamada "pixels" que contém as informações dos pixels que compõem a maçã.
+// Cada elemento da matriz é um array que representa um pixel e contém três valores: 
+// a posição x do pixel, a posição y do pixel e a cor do pixel em formato hexadecimal.
+const pixels = [
+    [4, 0, '#ff0000'], [5, 0, '#ff0000'],
+    [3, 1, '#ff0000'], [4, 1, '#ffcc00'], [5, 1, '#ff0000'], [6, 1, '#ff0000'],
+    [2, 2, '#ff0000'], [3, 2, '#ffcc00'], [4, 2, '#ffcc00'], [5, 2, '#ffcc00'], [6, 2, '#ffcc00'], [7, 2, '#ff0000'],
+    [2, 3, '#ff0000'], [3, 3, '#ffcc00'], [4, 3, '#ffcc00'], [5, 3, '#ffcc00'], [6, 3, '#ffcc00'], [7, 3, '#ff0000'],
+    [1, 4, '#ff0000'], [2, 4, '#ffcc00'], [3, 4, '#ffcc00'], [4, 4, '#ffcc00'], [5, 4, '#ffcc00'], [6, 4, '#ffcc00'], [7, 4, '#ff0000'], [8, 4, '#ff0000'],
+    [1, 5, '#ff0000'], [2, 5, '#ffcc00'], [3, 5, '#ffcc00'], [4, 5, '#ffcc00'], [5, 5, '#ffcc00'], [6, 5, '#ffcc00'], [7, 5, '#ff0000'], [8, 5, '#ff0000'],
+    [1, 6, '#ff0000'], [2, 6, '#ffcc00'], [3, 6, '#ffcc00'], [4, 6, '#ffcc00'], [5, 6, '#ffcc00'], [6, 6, '#ffcc00'], [7, 6, '#ff0000'], [8, 6, '#ff0000'],
+    [2, 7, '#ff0000'], [3, 7, '#ffcc00'], [4, 7, '#ffcc00'], [5, 7, '#ffcc00'], [6, 7, '#ffcc00'], [7, 7, '#ff0000'],
+    [2, 8, '#ff0000'], [3, 8, '#ffcc00'], [4, 8, '#ffcc00'], [5, 8, '#ffcc00'], [6, 8, '#ffcc00'], [7, 8, '#ff0000'],
+    [3, 9, '#ff0000'], [4, 9, '#ffcc00'], [5, 9, '#ffcc00'], [6, 9, '#ffcc00'], [7, 9, '#ff0000'],
+    [3, 10, '#ff0000'], [4, 10, '#ffcc00'], [5, 10, '#ffcc00'], [6, 10, '#ffcc00'], [7, 10, '#ff0000'],
+    [4, 11, '#ff0000'], [5, 11, '#ffcc00'], [6, 11, '#ffcc00'], [7, 11, '#ff0000'],
+    [4, 12, '#ff0000'], [5, 12, '#ff0000']
+];
 
-            function drawPixel(x, y, color) {
-                ctx.fillStyle = color;
-                // ctx.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
-                ctx.fillRect(x, y);
-            }
+// Imprime o número de pixels na matriz "pixels" no console.
+console.log(pixels.length);
 
-            // Exemplo: desenhando um rosto
-            drawPixel(0, 1, 'black');
-            drawPixel(5, 3, 'black');
-            // drawPixel(8, 5, 'black');
-            // drawPixel(9, 5, 'black');
-            // drawPixel(6, 6, 'black');
-            // drawPixel(8, 6, 'black');
-            // drawPixel(7, 7, 'black');
-            // drawPixel(6, 9, 'black');
-            // drawPixel(8, 9, 'black');
+// Desenha os pixels da maçã no canvas usando o método fillRect() do contexto de desenho 2D.
+// Percorre todos os pixels na matriz "pixels" e define a cor de preenchimento (fillStyle) como a cor do pixel atual,
+// e então desenha um quadrado de tamanho 10x10 (representando um pixel) na posição correta no canvas.
+pixels.forEach(pixel => {
+    ctx.fillStyle = pixel[2]; // Define a cor de preenchimento para a cor do pixel atual.
+    // Desenha um quadrado na posição correta do canvas, multiplicando a posição x e y do pixel por 10 para obter a posição em pixels no canvas.
+    ctx.fillRect(pixel[0] * 10, pixel[1] * 10, 10, 10);
+});
 
-            // Você pode adicionar mais pixels para criar sua própria pixel art
-
-            // Lembre-se de ajustar o tamanho do canvas conforme necessário e também o tamanho dos pixels
-
-        });
-    </script>
+</script>
 </body>
 </html>
