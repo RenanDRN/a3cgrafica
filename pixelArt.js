@@ -79,6 +79,30 @@ window.onload = function () {
         saveColorsButton.href = url;
         saveColorsButton.download = 'colors.txt';
     });
+
+    // Obtém a referência do botão de input do tipo "file"
+    const loadColorsButton = document.getElementById('loadColorsButton');
+
+    // Configura o evento de "change" do botão de input para lidar com o carregamento do arquivo
+    loadColorsButton.addEventListener('change', (event) => {
+        // Obtém o arquivo carregado
+        const file = event.target.files[0];
+
+        // Cria um novo FileReader para ler o conteúdo do arquivo
+        const reader = new FileReader();
+
+        reader.onload = (event) => {
+            // Converte o texto JSON de volta para um array de cores
+            const colorsArray = JSON.parse(event.target.result);
+
+            // Use o array de cores para reconstruir a imagem
+            for (let i = 0; i < colorsArray.length; i++) {
+                console.log(colorsArray[i]);
+                newPixels[i].style.backgroundColor = colorsArray[i];
+            }
+        };
+
+        // Lê o conteúdo do arquivo como texto
+        reader.readAsText(file);
+    });
 }
-
-
