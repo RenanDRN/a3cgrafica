@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="pixelCanvas" width="200" height="200"></canvas>
+    <input type="color" id="colorPicker">
+
+    <script>
+        // Tamanho do pixel
+        var pixelSize = 20;
+
+        var canvas = document.getElementById('pixelCanvas');
+        var ctx = canvas.getContext('2d');
+        var colorPicker = document.getElementById('colorPicker');
+
+        // Adicionar evento de clique para pintar pixels
+        canvas.addEventListener('click', function (event) {
+            var x = Math.floor(event.offsetX / pixelSize);
+            var y = Math.floor(event.offsetY / pixelSize);
+            var color = colorPicker.value;
+            drawPixel(x, y, color);
+        });
+
+        // Função para desenhar um pixel em uma determinada posição
+        function drawPixel(x, y, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
+        }
+    </script>
+</body>
+
+</html>
