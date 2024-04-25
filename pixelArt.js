@@ -11,14 +11,30 @@ window.onload = function () {
     // Define a cor atual como preto (#000000)
     let currentColor = '#000000';
 
-    // Itera sobre cada pixel e configura o evento de clique para alterar a cor
+    let isMouseDown = false;
+
+    document.addEventListener('mousedown', () => {
+        isMouseDown = true;
+    });
+
+    document.addEventListener('mouseup', () => {
+        isMouseDown = false;
+    });
+
     newPixels.forEach(pixel => {
         pixel.className = 'pixel';
         pixel.style.backgroundColor = '#fff';
         pixelArt.appendChild(pixel);
 
+        // Adiciona um ouvinte de evento de clique para alterar a cor do pixel
         pixel.addEventListener('click', () => {
             pixel.style.backgroundColor = currentColor;
+        });
+
+        pixel.addEventListener('mouseover', () => {
+            if (isMouseDown) {
+                pixel.style.backgroundColor = currentColor;
+            }
         });
     });
 
