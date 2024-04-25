@@ -1,0 +1,19 @@
+#pixelArt {
+    box-sizing: border-box;
+    width: 500px;
+    /* 25 pixels * 15px each */
+    height: 500px;
+    /* 25 pixels * 15px each */
+    display: grid;
+    grid-template-columns: repeat(25, 1fr);
+    grid-template-rows: repeat(25, 1fr);
+}
+
+.pixel {
+    box-sizing: border-box;
+    width: 20px;
+    /* increased size */
+    height: 20px;
+    /* increased size */
+    border: 1px solid #000;
+}
