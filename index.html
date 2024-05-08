@@ -1,61 +1,778 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pixel Art de uma Maçã</title>
-<style>
-    body {
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f0f0f0;
-    }
-    canvas {
-        border: 1px solid black;
-    }
-</style>
+	<!-- Site made with Mobirise Website Builder v5.9.17, https://mobirise.com -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="generator" content="Mobirise v5.9.17, mobirise.com">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
+	<meta name="description" content="">
+
+
+	<title>Home</title>
+	<link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+	<link rel="stylesheet" href="assets/pixelArt/styles.css">
+	<link rel="stylesheet" href="assets/pixelArt/gifStyle.css">
+
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+	<link rel="stylesheet" href="assets/animatecss/animate.css">
+	<link rel="stylesheet" href="assets/dropdown/css/style.css">
+	<link rel="stylesheet" href="assets/theme/css/style.css">
+	<link rel="preload"
+		href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+		as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript>
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
+	</noscript>
+	<link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=Npeq7C">
+	<link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=Npeq7C" type="text/css">
+
+
+
+
 </head>
+
 <body>
-<canvas id="macaCanvas" width="200" height="200"></canvas>
-<script>
-   // Obtém o elemento de canvas com o id "macaCanvas" e seu contexto de desenho 2D.
-const canvas = document.getElementById('macaCanvas');
-const ctx = canvas.getContext('2d');
 
-// Define uma matriz chamada "pixels" que contém as informações dos pixels que compõem a maçã.
-// Cada elemento da matriz é um array que representa um pixel e contém três valores: 
-// a posição x do pixel, a posição y do pixel e a cor do pixel em formato hexadecimal.
-const pixels = [
-    [4, 0, '#ff0000'], [5, 0, '#ff0000'],
-    [3, 1, '#ff0000'], [4, 1, '#ffcc00'], [5, 1, '#ff0000'], [6, 1, '#ff0000'],
-    [2, 2, '#ff0000'], [3, 2, '#ffcc00'], [4, 2, '#ffcc00'], [5, 2, '#ffcc00'], [6, 2, '#ffcc00'], [7, 2, '#ff0000'],
-    [2, 3, '#ff0000'], [3, 3, '#ffcc00'], [4, 3, '#ffcc00'], [5, 3, '#ffcc00'], [6, 3, '#ffcc00'], [7, 3, '#ff0000'],
-    [1, 4, '#ff0000'], [2, 4, '#ffcc00'], [3, 4, '#ffcc00'], [4, 4, '#ffcc00'], [5, 4, '#ffcc00'], [6, 4, '#ffcc00'], [7, 4, '#ff0000'], [8, 4, '#ff0000'],
-    [1, 5, '#ff0000'], [2, 5, '#ffcc00'], [3, 5, '#ffcc00'], [4, 5, '#ffcc00'], [5, 5, '#ffcc00'], [6, 5, '#ffcc00'], [7, 5, '#ff0000'], [8, 5, '#ff0000'],
-    [1, 6, '#ff0000'], [2, 6, '#ffcc00'], [3, 6, '#ffcc00'], [4, 6, '#ffcc00'], [5, 6, '#ffcc00'], [6, 6, '#ffcc00'], [7, 6, '#ff0000'], [8, 6, '#ff0000'],
-    [2, 7, '#ff0000'], [3, 7, '#ffcc00'], [4, 7, '#ffcc00'], [5, 7, '#ffcc00'], [6, 7, '#ffcc00'], [7, 7, '#ff0000'],
-    [2, 8, '#ff0000'], [3, 8, '#ffcc00'], [4, 8, '#ffcc00'], [5, 8, '#ffcc00'], [6, 8, '#ffcc00'], [7, 8, '#ff0000'],
-    [3, 9, '#ff0000'], [4, 9, '#ffcc00'], [5, 9, '#ffcc00'], [6, 9, '#ffcc00'], [7, 9, '#ff0000'],
-    [3, 10, '#ff0000'], [4, 10, '#ffcc00'], [5, 10, '#ffcc00'], [6, 10, '#ffcc00'], [7, 10, '#ff0000'],
-    [4, 11, '#ff0000'], [5, 11, '#ffcc00'], [6, 11, '#ffcc00'], [7, 11, '#ff0000'],
-    [4, 12, '#ff0000'], [5, 12, '#ff0000']
-];
+	<section data-bs-version="5.1" class="menu menu3 cid-u9uHwAWFOj" once="menu" id="menu03-1u">
 
-// Imprime o número de pixels na matriz "pixels" no console.
-console.log(pixels.length);
 
-// Desenha os pixels da maçã no canvas usando o método fillRect() do contexto de desenho 2D.
-// Percorre todos os pixels na matriz "pixels" e define a cor de preenchimento (fillStyle) como a cor do pixel atual,
-// e então desenha um quadrado de tamanho 10x10 (representando um pixel) na posição correta no canvas.
-pixels.forEach(pixel => {
-    ctx.fillStyle = pixel[2]; // Define a cor de preenchimento para a cor do pixel atual.
-    // Desenha um quadrado na posição correta do canvas, multiplicando a posição x e y do pixel por 10 para obter a posição em pixels no canvas.
-    ctx.fillRect(pixel[0] * 10, pixel[1] * 10, 10, 10);
-});
+		<nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+			<div class="container">
+				<div class="navbar-brand">
+					<span class="navbar-logo">
+						<a href="https://mobiri.se">
+							<img src="assets/images/logo2.png" alt="Mobirise Website Builder" style="height: 4rem;">
+						</a>
+					</span>
 
-</script>
+				</div>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
+					data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<div class="hamburger">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+						<li class="nav-item">
+							<a class="nav-link link text-black text-primary display-4" href="index.html#top">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link link text-black show text-primary display-4"
+								href="index.html#features04-w" aria-expanded="false">Na prática</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link link text-black text-primary display-4"
+								href="index.html#people04-2c">Quem somos?</a>
+						</li>
+					</ul>
+					<div class="icons-menu">
+						<a class="iconfont-wrapper" href="https://github.com/RenanDRN/a3cgrafica" target="_blank">
+							<span class="p-2 mbr-iconfont mobi-mbri-github mobi-mbri"></span>
+						</a>
+
+
+
+					</div>
+
+				</div>
+			</div>
+		</nav>
+	</section>
+
+	<section data-bs-version="5.1" class="header5 cid-tJS6uM4N87" id="header05-1">
+
+
+
+
+
+		<div class="align-center container">
+			<div class="row justify-content-center">
+				<div class="col-md-12 col-lg-9">
+					<h1 class="mbr-section-title mbr-fonts-style mb-4 display-1"><strong>Pixel Math: Aplicação de
+							Matrizes em Imagens</strong></h1>
+					<p class="mbr-text mbr-fonts-style mb-4 display-7">Matrizes são estruturas retangulares de números
+						organizados em linhas e colunas. Podem representar dados visuais, como imagens, onde cada
+						elemento corresponde a um pixel.&nbsp;<br></p>
+					<div class="mbr-section-btn mt-3"><a class="btn btn-black display-7"
+							href="index.html#form02-6">Start now</a> <a class="btn btn-primary-outline display-7"
+							href="index.html#gallery02-v">Live demo</a></div>
+				</div>
+			</div>
+			<div class="row mt-5 justify-content-center">
+
+			</div>
+		</div>
+	</section>
+
+	<section data-bs-version="5.1" class="start article2 cid-uc8pHa1op7" id="article02-28">
+
+
+
+
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-12 col-lg-6 image-wrapper">
+					<img class="w-100" src="assets/images/gallery03.jpg" alt="Mobirise Website Builder">
+				</div>
+				<div class="col-12 col-md-12 col-lg">
+					<div class="text-wrapper align-left">
+						<h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
+							<strong>Matriz computacional</strong>
+						</h1>
+						<p class="mbr-text align-left mbr-fonts-style mb-4 display-7">
+							Uma matriz computacional é uma estrutura de dados bidimensional usada em computação para
+							representar conjuntos de números ou elementos organizados em linhas e colunas. É uma
+							estrutura fundamental em várias áreas da computação, como álgebra linear, processamento de
+							imagens, aprendizado de máquina e muitas outras.
+							<br>
+							<br>
+							Em termos simples, você pode pensar em uma matriz como uma tabela de números. Cada elemento
+							da matriz é identificado por dois índices: um para a linha e outro para a coluna. Por
+							exemplo, uma matriz 3x3 teria três linhas e três colunas, totalizando nove elementos.
+							<br>
+							<br>
+							Matrizes computacionais são utilizadas para armazenar dados estruturados de forma tabular e
+							realizar uma variedade de operações matemáticas, como adição, subtração, multiplicação,
+							transposição, entre outras. Elas são essenciais em muitos algoritmos e cálculos que lidam
+							com grandes conjuntos de dados ou representam sistemas complexos.
+						</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section data-bs-version="5.1" class="start article4 cid-uc8pM5sxMU" id="article04-29">
+
+
+
+
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-12 col-lg-6 image-wrapper">
+					<img class="w-100" src="assets/images/gallery04.jpg" alt="Mobirise Website Builder">
+				</div>
+				<div class="col-12 col-md-12 col-lg">
+					<div class="text-wrapper align-left">
+						<h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
+							<strong>Matriz Matemática</strong>
+						</h1>
+						<p class="mbr-text align-left mbr-fonts-style mb-4 display-7">Em matemática, uma matriz é uma
+							estrutura retangular de números, símbolos ou expressões organizadas em linhas e colunas.
+							Formalmente, uma matriz é uma coleção de elementos dispostos em uma grade retangular. Cada
+							elemento da matriz é identificado por dois índices: um índice para a linha e outro para a
+							coluna.</p>
+
+						<p class="mbr-text align-left mbr-fonts-style mb-4 display-7">Por exemplo, uma matriz 2x3 tem
+							duas linhas e três colunas:</p>
+
+						<div class="mbr-text align-left mbr-fonts-style mb-4 display-7">
+							\[ A = \begin{bmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \end{bmatrix} \]
+						</div>
+
+						<p class="mbr-text align-left mbr-fonts-style mb-4 display-7">As matrizes são fundamentais em
+							várias áreas da matemática e suas aplicações se estendem para muitas disciplinas, como
+							álgebra linear, cálculo, estatística, física, engenharia, ciência da computação, entre
+							outras. Elas são utilizadas para representar e resolver sistemas de equações lineares,
+							transformações lineares, operações de geometria, processamento de sinais, otimização, entre
+							muitas outras aplicações.</p>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section data-bs-version="5.1" class="article8 cid-uc8pYKS666" id="article08-2a">
+
+
+
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="card col-md-12 col-lg-10">
+					<div class="card-wrapper">
+						<div class="image-wrapper d-flex justify-content-center mb-4">
+							<img src="assets/images/11.jpg" alt="Mobirise Website Builder">
+						</div>
+						<div class="card-content-text">
+							<h3 class="card-title mbr-fonts-style mbr-white mt-3 mb-4 display-2">
+								<strong>Qual é a relação entre elas?</strong>
+							</h3>
+							<div class="row card-box align-left">
+								<div class="item features-without-image col-12">
+									<div class="item-wrapper">
+										<h4 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5">
+											<strong>Eligibility for returns</strong>
+										</h4>
+										<p class="mbr-text mbr-fonts-style display-7">
+											To be eligible for a refund, the item must be unused,
+											undamaged, and in its original packaging. Custom-made or
+											personalized items may not be eligible for a refund unless
+											they are received in a damaged or defective condition.
+										</p>
+									</div>
+								</div>
+								<div class="item features-without-image col-12">
+									<div class="item-wrapper">
+										<h4 class="mbr-section-subtitle mbr-fonts-style display-5">
+											<strong>Return process</strong>
+										</h4>
+										<p class="mbr-text mbr-fonts-style display-7">
+											If you wish to return an item, please follow contact our
+											customer care team within the specified return window to
+											initiate the return request. Provide the necessary
+											information, including your order number, product details, and
+											reason for return. Our customer care team will guide you
+											through the return process, providing you with a return
+											authorization and any specific instructions for packaging and
+											shipping the item back to us.
+										</p>
+									</div>
+								</div>
+								<div class="item features-without-image col-12">
+									<div class="item-wrapper">
+										<h4 class="mbr-section-subtitle mbr-fonts-style display-5">
+											<strong>Return shipping</strong>
+										</h4>
+										<p class="mbr-text mbr-fonts-style display-7">
+											When returning an item, you may be responsible for the return
+											shipping costs unless the return is due to an error on our
+											part, such as a defective or incorrect item sent. We recommend
+											using a trackable shipping method and retaining the shipping
+											receipt as proof of shipment.
+										</p>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section data-bs-version="5.1" class="features4 cid-tMlEXTHLbS" id="features04-w">
+
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 content-head">
+					<div class="mbr-section-head mb-5">
+						<h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Simule e
+								manipule matrizes em tempo real</strong></h4>
+						<h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7">Veja abaixo
+							formas de manipular matrizes de forma prática e divertida.
+							<div><br></div>
+						</h5>
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="item features-image col-12 col-md-6 col-lg-4">
+					<div class="item-wrapper">
+						<div class="item-img">
+							<img src="assets/images/gallery03.jpg" alt="Mobirise Website Builder">
+						</div>
+						<div class="item-content">
+							<h5 class="item-title mbr-fonts-style display-5"><strong>Matrix Filter</strong></h5>
+
+							<p class="mbr-text mbr-fonts-style display-7">Aplique filtros em imagens
+								<br>
+								<br>
+							</p>
+							<div class="mbr-section-btn item-footer"><a href="index.html#article01-2e"
+									class="btn item-btn btn-primary display-7">Descobrir</a></div>
+						</div>
+
+					</div>
+				</div>
+				<div class="item features-image col-12 col-md-6 col-lg-4">
+					<div class="item-wrapper">
+						<div class="item-img">
+							<img src="assets/images/gallery05.jpg" alt="Mobirise Website Builder">
+						</div>
+						<div class="item-content">
+							<h5 class="item-title mbr-fonts-style display-5"><strong>Museu Pixel Art</strong></h5>
+
+							<p class="mbr-text mbr-fonts-style display-7">
+								Visualize artes matriciais em slow motion
+							</p>
+							<div class="mbr-section-btn item-footer"><a href="index.html#gallery01-2i"
+									class="btn item-btn btn-primary display-7">Descobrir</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="item features-image col-12 col-md-6 col-lg-4">
+					<div class="item-wrapper">
+						<div class="item-img">
+							<img src="assets/images/gallery02.jpg" alt="Mobirise Website Builder">
+						</div>
+						<div class="item-content">
+							<h5 class="item-title mbr-fonts-style display-5"><strong>Pixel Play</strong></h5>
+
+							<p class="mbr-text mbr-fonts-style display-7">Se divirta colorindo em matriz&nbsp;<br>
+							</p>
+							<div class="mbr-section-btn item-footer"><a href="index.html#header14-2j"
+									class="btn item-btn btn-primary display-7">Descobrir</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section data-bs-version="5.1" class="start article01 cid-uc8vcfW1Vl" id="article01-2e">
+
+
+
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="card col-md-12 col-lg-11">
+					<div class="card-wrapper">
+						<div class="row">
+							<div class="image-wrapper col-12 col-sm-6 justify-content-center">
+								<img src="assets/images/11.jpg" alt="Mobirise Website Builder">
+							</div>
+							<div class="image-wrapper col-12 col-sm-6 justify-content-center">
+								<img src="assets/images/gallery02.jpg" alt="Mobirise Website Builder">
+							</div>
+						</div>
+
+						<div class="card-box align-left mb-3 card-content-text">
+
+
+							<div class="mbr-section-btn mt-3 mb-0"><a class="btn btn-primary display-7"
+									href="https://mobiri.se">Brilho</a> <a class="btn btn-primary display-7"
+									href="https://mobiri.se">Monocromático</a> <a class="btn btn-primary display-7"
+									href="https://mobiri.se">Negativo</a> <a class="btn btn-primary display-7"
+									href="https://mobiri.se">Sépia</a> <a class="btn btn-primary display-7"
+									href="https://mobiri.se">Flip Horizontal</a> <a class="btn btn-primary display-7"
+									href="https://mobiri.se">Flip Vertical</a> <a class="btn btn-primary display-7"
+									href="https://mobiri.se">Flip Vertical/Horizontal</a> <a
+									class="btn btn-primary display-7" href="https://mobiri.se">Escala</a> <a
+									class="btn btn-primary display-7" href="https://mobiri.se">Bordas H</a> <a
+									class="btn btn-primary display-7" href="https://mobiri.se">Bordas V</a> <a
+									class="btn btn-primary display-7" href="https://mobiri.se">Bordas HV</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section data-bs-version="5.1" class="gallery1 mbr-gallery cid-uc8y5Yzp42" id="gallery01-2i">
+
+
+
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div class="col-12 content-head">
+					<div class="mb-5">
+						<h3 class="mbr-section-title mbr-fonts-style align-center m-0 display-2"><strong>Museu Pixel
+								Art</strong></h3>
+						<h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7">
+							<div>Visualize artes em pixel sendo geradas em slow motion</div>
+						</h4>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mbr-gallery">
+				<div class="col-12 col-md-6 col-lg-3 item gallery-image">
+					<div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal"
+						data-target="#uc8Dxci4M3-modal" data-bs-target="#uc8Dxci4M3-modal">
+						<!--ARRUMAR-->
+						<div id="pixelArtGif" style="margin: 0 auto;"></div>
+						<div class="icon-wrapper">
+							<span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 item gallery-image">
+					<div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal"
+						data-target="#uc8Dxci4M3-modal" data-bs-target="#uc8Dxci4M3-modal">
+						<div id="pixelArtGif2" style="margin: 0 auto;"></div>
+						<div class="icon-wrapper">
+							<span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+						</div>
+					</div>
+
+
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 item gallery-image">
+					<div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal"
+						data-target="#uc8Dxci4M3-modal" data-bs-target="#uc8Dxci4M3-modal">
+						<div id="pixelArtGif3" style="margin: 0 auto;"></div>
+						<div class="icon-wrapper">
+							<span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 item gallery-image">
+					<div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal"
+						data-target="#uc8Dxci4M3-modal" data-bs-target="#uc8Dxci4M3-modal">
+						<div id="pixelArtGif4" style="margin: 0 auto;"></div>
+						<div class="icon-wrapper">
+							<span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 item gallery-image">
+					<div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal"
+						data-target="#uc8Dxci4M3-modal" data-bs-target="#uc8Dxci4M3-modal">
+						<div id="pixelArtGif5" style="margin: 0 auto;"></div>
+						<div class="icon-wrapper">
+							<span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 item gallery-image">
+					<div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal"
+						data-target="#uc8Dxci4M3-modal" data-bs-target="#uc8Dxci4M3-modal">
+						<img class="w-100" src="assets/images/gallery05.jpg" alt="Mobirise Website Builder"
+							data-slide-to="5" data-bs-slide-to="5" data-target="#lb-uc8Dxci4M3"
+							data-bs-target="#lb-uc8Dxci4M3">
+						<div class="icon-wrapper">
+							<span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 item gallery-image">
+					<div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal"
+						data-target="#uc8Dxci4M3-modal" data-bs-target="#uc8Dxci4M3-modal">
+						<img class="w-100" src="assets/images/gallery06.jpg" alt="Mobirise Website Builder"
+							data-slide-to="6" data-bs-slide-to="6" data-target="#lb-uc8Dxci4M3"
+							data-bs-target="#lb-uc8Dxci4M3">
+						<div class="icon-wrapper">
+							<span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-12 col-md-6 col-lg-3 item gallery-image">
+					<div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal"
+						data-target="#uc8Dxci4M3-modal" data-bs-target="#uc8Dxci4M3-modal">
+						<img class="w-100" src="assets/images/gallery07.jpg" alt="Mobirise Website Builder"
+							data-slide-to="7" data-bs-slide-to="7" data-target="#lb-uc8Dxci4M3"
+							data-bs-target="#lb-uc8Dxci4M3">
+						<div class="icon-wrapper">
+							<span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="modal mbr-slider" tabindex="-1" role="dialog" aria-hidden="true" id="uc8Dxci4M3-modal">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="carousel slide" data-pause="false" data-bs-pause="false" id="lb-uc8Dxci4M3"
+								data-interval="5000" data-bs-interval="5000">
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<img class="d-block w-100" src="assets/pixelArt/Cogumelo.png"
+											alt="Mobirise Website Builder">
+									</div>
+									<div class="carousel-item">
+										<img class="d-block w-100" src="assets/pixelArt/escalaCinza.png"
+											alt="Mobirise Website Builder">
+									</div>
+									<div class="carousel-item">
+										<img class="d-block w-100" src="assets/pixelArt/galinha.png"
+											alt="Mobirise Website Builder">
+									</div>
+									<div class="carousel-item">
+										<img class="d-block w-100" src="assets/pixelArt/coracao.png"
+											alt="Mobirise Website Builder">
+									</div>
+									<div class="carousel-item">
+										<img class="d-block w-100" src="assets/pixelArt/golf.png"
+											alt="Mobirise Website Builder">
+									</div>
+									<div class="carousel-item">
+										<img class="d-block w-100" src="assets/images/gallery05.jpg"
+											alt="Mobirise Website Builder">
+									</div>
+									<div class="carousel-item">
+										<img class="d-block w-100" src="assets/images/gallery06.jpg"
+											alt="Mobirise Website Builder">
+									</div>
+									<div class="carousel-item">
+										<img class="d-block w-100" src="assets/images/gallery07.jpg"
+											alt="Mobirise Website Builder">
+									</div>
+								</div>
+								<ol class="carousel-indicators">
+									<li data-slide-to="0" data-bs-slide-to="0" class="active"
+										data-target="#lb-uc8Dxci4M3" data-bs-target="#lb-uc8Dxci4M3"></li>
+									<li data-slide-to="1" data-bs-slide-to="1" data-target="#lb-uc8Dxci4M3"
+										data-bs-target="#lb-uc8Dxci4M3"></li>
+									<li data-slide-to="2" data-bs-slide-to="2" data-target="#lb-uc8Dxci4M3"
+										data-bs-target="#lb-uc8Dxci4M3"></li>
+									<li data-slide-to="3" data-bs-slide-to="3" data-target="#lb-uc8Dxci4M3"
+										data-bs-target="#lb-uc8Dxci4M3"></li>
+									<li data-slide-to="4" data-bs-slide-to="4" data-target="#lb-uc8Dxci4M3"
+										data-bs-target="#lb-uc8Dxci4M3"></li>
+									<li data-slide-to="5" data-bs-slide-to="5" data-target="#lb-uc8Dxci4M3"
+										data-bs-target="#lb-uc8Dxci4M3"></li>
+									<li data-slide-to="6" data-bs-slide-to="6" data-target="#lb-uc8Dxci4M3"
+										data-bs-target="#lb-uc8Dxci4M3"></li>
+									<li data-slide-to="7" data-bs-slide-to="7" data-target="#lb-uc8Dxci4M3"
+										data-bs-target="#lb-uc8Dxci4M3"></li>
+								</ol>
+								<a role="button" href="" class="close" data-dismiss="modal" data-bs-dismiss="modal"
+									aria-label="Close">
+								</a>
+								<a class="carousel-control-prev carousel-control" role="button" data-slide="prev"
+									data-bs-slide="prev" href="#lb-uc8Dxci4M3">
+									<span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>
+									<span class="sr-only visually-hidden">Previous</span>
+								</a>
+								<a class="carousel-control-next carousel-control" role="button" data-slide="next"
+									data-bs-slide="next" href="#lb-uc8Dxci4M3">
+									<span class="mobi-mbri mobi-mbri-arrow-next" aria-hidden="true"></span>
+									<span class="sr-only visually-hidden">Next</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section data-bs-version="5.1" class="header14 cid-uc8yMOH0oz" id="header14-2j">
+
+
+
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="card col-12 col-md-12 col-lg-12">
+					<div class="card-wrapper">
+						<div class="card-box align-center">
+							<h1 class="card-title mbr-fonts-style mb-4 display-1"><strong>Pixel Play</strong></h1>
+							<p class="mbr-text mbr-fonts-style mb-4 display-7">
+								Se divirta colorindo em matriz</p>
+							<div id="pixelArt" style="margin: 0 auto;"></div>
+
+							<!-- ARRUMAR - class="btn btn-warning display-7" -->
+							<input type="color" class="btn-warning" id="colorPicker" value="#000000">
+
+
+
+
+							<button id="clearButton" class="btn btn-warning display-7">Limpar</button>
+							<a id="saveColorsButton" class="btn btn-warning display-7">Salvar Cores</a> <button
+								id="saveButton" class="btn btn-warning display-7">Salvar
+								PNG</button>
+							<input type="file" id="loadColorsButton" class="btn btn-warning display-10">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+
+	<section data-bs-version="5.1" class="people04 cid-uc8uoCcbTB" id="people04-2c">
+
+
+		<div class="container">
+			<div class="row mb-5 justify-content-center">
+				<div class="col-12 mb-0 content-head">
+					<h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+						<strong>Quem somos?</strong>
+					</h3>
+
+				</div>
+			</div>
+			<div class="row mbr-masonry" data-masonry="{&quot;percentPosition&quot;: true }">
+				<div class="item features-without-image col-12 col-md-6 col-lg-4 active">
+					<div class="item-wrapper">
+						<div class="card-box align-left">
+							<p class="card-text mbr-fonts-style display-7">
+								I can't express how much I adore the unique clothing pieces from this small creative
+								business. Each piece has its own character and charm. I feel like I'm wearing a work of
+								art!
+							</p>
+							<div class="img-wrapper mt-4 mb-2">
+								<img src="assets/images/beatriz-160x161.png" alt="" data-slide-to="0"
+									data-bs-slide-to="0">
+							</div>
+							<h5 class="card-title mbr-fonts-style display-7"><strong>Bia</strong></h5>
+						</div>
+					</div>
+				</div>
+				<div class="item features-without-image col-12 col-md-6 col-lg-4">
+					<div class="item-wrapper">
+						<div class="card-box align-left">
+							<p class="card-text mbr-fonts-style display-7">
+								I've been a customer for years, and I'm always excited to see the latest creations. The
+								designs are fresh and exciting, and the customer service is top-notch.
+							</p>
+							<div class="img-wrapper mt-4 mb-2">
+								<img src="assets/images/caique-160x160.jpg" data-slide-to="1" data-bs-slide-to="1"
+									alt="">
+							</div>
+							<h5 class="card-title mbr-fonts-style display-7">
+								<strong>Caique</strong>
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="item features-without-image col-12 col-md-6 col-lg-4">
+					<div class="item-wrapper">
+						<div class="card-box align-left">
+							<p class="card-text mbr-fonts-style display-7">
+								I keep coming back for more because I can't find clothing like this anywhere else. It's
+								not
+								just clothing; it's a statement. I'm proud to support such a talented small business.
+							</p>
+							<div class="img-wrapper mt-4 mb-2">
+								<img src="assets/images/lucas-160x160.jpg" data-slide-to="2" data-bs-slide-to="2"
+									alt="">
+							</div>
+							<h5 class="card-title mbr-fonts-style display-7">
+								<strong>Lucas</strong>
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="item features-without-image col-12 col-md-6 col-lg-4">
+					<div class="item-wrapper">
+						<div class="card-box align-left">
+							<p class="card-text mbr-fonts-style display-7">
+								As a fashion enthusiast, I appreciate the craftsmanship in every piece. These clothes
+								are
+								comfortable, stylish, and perfect for any occasion. I'm hooked!
+							</p>
+							<div class="img-wrapper mt-4 mb-2">
+								<img src="assets/images/rafola.jpg" data-slide-to="3" data-bs-slide-to="3" alt="">
+							</div>
+							<h5 class="card-title mbr-fonts-style display-7">
+								<strong>Rafa</strong>
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="item features-without-image col-12 col-md-6 col-lg-4">
+					<div class="item-wrapper">
+						<div class="card-box align-left">
+							<p class="card-text mbr-fonts-style display-7">
+								Apaixonada pelo mundo da tecnologia e blablabla</p>
+							<div class="img-wrapper mt-4 mb-2">
+								<img src="assets/images/milena-160x160.jpg" data-slide-to="4" data-bs-slide-to="4"
+									alt="">
+							</div>
+							<h5 class="card-title mbr-fonts-style display-7">
+								<p>
+									<strong>Milena</strong>
+								</p>
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="item features-without-image col-12 col-md-6 col-lg-4">
+					<div class="item-wrapper">
+						<div class="card-box align-left">
+							<p class="card-text mbr-fonts-style display-7">
+								I've received so many inquiries about where I get my outfits. Keep up the fantastic
+								work!
+							</p>
+							<div class="img-wrapper mt-4 mb-2">
+								<img src="assets/images/renan-160x160.jpg" data-slide-to="5" data-bs-slide-to="5"
+									alt="">
+							</div>
+							<h5 class="card-title mbr-fonts-style display-7">
+								<strong>Renan</strong>
+							</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section data-bs-version="5.1" class="footer2 cid-u9uHxNlzo9" once="footers" id="footer02-1v">
+
+
+
+
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-6 center mt-2 mb-3">
+					<p class="mbr-fonts-style copyright mb-0 display-7">
+						© Math Pixel, 2024 - All Rights Reserved
+					</p>
+				</div>
+				<div class="col-12 col-lg-6 center">
+					<div class="row-links mt-2 mb-3">
+						<ul class="row-links-soc">
+
+
+
+
+							<li class="row-links-soc-item mbr-fonts-style display-7"><a
+									href="https://github.com/RenanDRN/a3cgrafica" class="text-white"
+									target="_blank">GitHub</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="display-7"
+		style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;">
+		<a href="https://mobiri.se/3180726"
+			style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;"
+				src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a>
+		<p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1"
+			href="https://mobirise.com/builder/ai-website-creator.html">Free AI Website Creator</a>
+	</section>
+	<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/smoothscroll/smooth-scroll.js"></script>
+	<script src="assets/ytplayer/index.js"></script>
+	<script src="assets/dropdown/js/navbar-dropdown.js"></script>
+	<script src="assets/masonry/masonry.pkgd.min.js"></script>
+	<script src="assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="assets/theme/js/script.js"></script>
+	<script src="assets/pixelArt/pixelArt.js"></script>
+
+	<!-- Adicione o código MathJax abaixo para renderizar as equações matemáticas -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+	<input name="animation" type="hidden">
 </body>
+
 </html>
