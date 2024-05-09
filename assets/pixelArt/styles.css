@@ -12,13 +12,15 @@
 /* Estilos para telas pequenas */
 @media (max-width: 600px) {
     #pixelArt {
-        width: 375px;
-        height: 375px;
+        width: 300px;
+        /*375*/
+        height: 300px;
     }
 
     .pixel {
-        width: 15px;
-        height: 15px;
+        width: 12px;
+        /*15*/
+        height: 12px;
     }
 }
 
