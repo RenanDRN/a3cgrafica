@@ -1,19 +1,36 @@
 #pixelArt {
-    width: 500px;
-    /* 25 pixels * 15px de largura */
-    height: 500px;
-    /* 25 pixels * 15px de altura */
     display: grid;
-    grid-template-columns: repeat(25, 20px);
-    /* Largura fixa de 15px para cada coluna */
-    grid-template-rows: repeat(25, 20px);
-    /* Altura fixa de 15px para cada linha */
+    grid-template-columns: repeat(25, 1fr);
+    grid-template-rows: repeat(25, 1fr);
 }
 
 .pixel {
     box-sizing: border-box;
-    /* Include border in width and height */
-    width: 20px;
-    height: 20px;
     border: 1px solid #000;
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 600px) {
+    #pixelArt {
+        width: 375px;
+        height: 375px;
+    }
+
+    .pixel {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* Estilos para telas maiores */
+@media (min-width: 601px) {
+    #pixelArt {
+        width: 500px;
+        height: 500px;
+    }
+
+    .pixel {
+        width: 20px;
+        height: 20px;
+    }
 }
