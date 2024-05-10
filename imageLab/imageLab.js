@@ -97,7 +97,7 @@ const imageLab = {
                 image.ctx.putImageData(imageData, 0, 0);
             },
             newImage(width, height) {
-                console.log('image.canvas',image.canvas);
+                console.log('image.canvas', image.canvas);
                 image.canvas = document.getElementById("canvas_dest");
                 image.canvas.width = width
                 image.canvas.height = height

@@ -12,7 +12,6 @@
 
 
 	<title>Home</title>
-	<script type="module" src="main.js"></script>
 	<link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
 	<link rel="stylesheet" href="assets/pixelArt/styles.css">
 	<link rel="stylesheet" href="assets/pixelArt/gifStyle.css">
@@ -23,8 +22,7 @@
 	<link rel="stylesheet" href="assets/animatecss/animate.css">
 	<link rel="stylesheet" href="assets/dropdown/css/style.css">
 	<link rel="stylesheet" href="assets/theme/css/style.css">
-	<script src="https://cdn.tailwindcss.com"></script>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 	<link rel="preload"
 		href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
 		as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -292,6 +290,8 @@
 		</div>
 	</section>
 
+
+
 	<section data-bs-version="5.1" class="features4 cid-tMlEXTHLbS" id="features04-w">
 
 
@@ -363,81 +363,66 @@
 		</div>
 	</section>
 
+
+
+
 	<section data-bs-version="5.1" class="start article01 cid-uc8vcfW1Vl" id="article01-2e">
 
-		<div class="m-1 p-1 border rounded bg-blue-200 font-bold">
-			Image Lab
-		</div>
-		<div class="m-2">
-			<input type="file" id="btnLoad" />
-		</div>
-		<div id="buttons"></div>
-	
-		<!-- CANVAS DAS IMAGENS -->
-		<div class="m-1 flex items-center gap-2">
-			<div class="border rounded p-1">
-				<div class="text-xs">
-					Source
-				</div>
-				<canvas width="100" height="100" id="canvas_source"></canvas>
-			</div>
-			<div class="border rounded p-1">
-				<div class="text-xs">
-					Dest
-				</div>
-				<canvas width="100" height="100" id="canvas_dest"></canvas>
-			</div>
-		</div>
-		<!-- FIM - CANVAS DAS IMAGENS -->
-		<div class="flex items-center gap-3">
-			<div class="w-[1200px] p-4 border rounded">
-				<div>
-					Histograma
-				</div>
-				<hr>
-				<canvas id="myChart"></canvas>
-			</div>
-			<div class="w-[1200px] p-4 border rounded">
-				<div>
-					Histograma Image 2
-				</div>
-				<hr>
-				<canvas id="myChart2"></canvas>
-			</div>        
-		</div>
 
-		</div>
 		<div class="row justify-content-center">
 			<div class="card col-md-12 col-lg-11">
 				<div class="card-wrapper">
 					<div class="row">
 						<div class="image-wrapper col-12 col-sm-6 justify-content-center">
-							<img src="assets/images/11.jpg" alt="Mobirise Website Builder">
+							<canvas width="100" height="100" id="canvas_source"></canvas>
 						</div>
 						<div class="image-wrapper col-12 col-sm-6 justify-content-center">
-							<img src="assets/images/gallery02.jpg" alt="Mobirise Website Builder">
+							<canvas width="100" height="100" id="canvas_dest"></canvas>
 						</div>
 					</div>
 
-					<div class="card-box align-left mb-3 card-content-text">
+					<div class="row">
+						<div class="image-wrapper col-12 col-sm-6 justify-content-center">
+							<canvas width="100" height="100" id="canvas_source"></canvas>
+						</div>
+						<div class="image-wrapper col-12 col-sm-6 justify-content-center">
+							<canvas width="100" height="100" id="canvas_dest"></canvas>
+						</div>
 
-
-						<div class="mbr-section-btn mt-3 mb-0"><a class="btn btn-primary display-7"
-								href="https://mobiri.se">Brilho</a> <a class="btn btn-primary display-7"
-								href="https://mobiri.se">Monocromático</a> <a class="btn btn-primary display-7"
-								href="https://mobiri.se">Negativo</a> <a class="btn btn-primary display-7"
-								href="https://mobiri.se">Sépia</a> <a class="btn btn-primary display-7"
-								href="https://mobiri.se">Flip Horizontal</a> <a class="btn btn-primary display-7"
-								href="https://mobiri.se">Flip Vertical</a> <a class="btn btn-primary display-7"
-								href="https://mobiri.se">Flip Vertical/Horizontal</a> <a
-								class="btn btn-primary display-7" href="https://mobiri.se">Escala</a> <a
-								class="btn btn-primary display-7" href="https://mobiri.se">Bordas H</a> <a
-								class="btn btn-primary display-7" href="https://mobiri.se">Bordas V</a> <a
-								class="btn btn-primary display-7" href="https://mobiri.se">Bordas HV</a></div>
+						<div class="image-wrapper col-12 col-sm-6 justify-content-center">
+							<div>
+								Histograma
+							</div>
+							<hr>
+							<canvas id="myChart"></canvas>
+						</div>
+						<div class="image-wrapper col-12 col-sm-6 justify-content-center">
+							<div>
+								Histograma imagem 2
+							</div>
+							<hr>
+							<canvas id="myChart2"></canvas>
+						</div>
 					</div>
 
+					<div class="d-flex justify-content-center">
+						<div>
+							<div class="m-2">
+
+								<input type="file" id="btnLoad" class="btn btn-primary display-7" />
+							</div>
+						</div>
+					</div>
+
+					<div class="align-left mb-3 card-content-text">
+
+						<div id="buttons"></div>
+
+					</div>
 				</div>
+
 			</div>
+		</div>
 		</div>
 		</div>
 	</section>
@@ -823,10 +808,14 @@
 	<script src="assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
 	<script src="assets/theme/js/script.js"></script>
 	<script src="assets/pixelArt/pixelArt.js"></script>
+	<script type="module" src="main.js"></script> <!--- ARRUMAR -->
+	<!--<script src="https://cdn.tailwindcss.com"></script> CONFLITO -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 	<!-- Adicione o código MathJax abaixo para renderizar as equações matemáticas -->
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 
 	<input name="animation" type="hidden">
 </body>
