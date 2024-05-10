@@ -3,14 +3,10 @@ import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 function createFilters(imageLab, filters) {
     const buttons = {
         template: `
-        <div class="m-1 p-1 border rounded">
-            <div>Filtros:</div>
-            <hr class="mb-1">
-            <div class="flex items-center gap-2">
-                <button @click="btnClick(filter)" v-for="(filter,index) in filters" class="bg-gray-600 text-white px-1 rounded hover:bg-gray-400">
-                    {{ filter.label }}
-                </button>
-            </div>
+        <div class="mbr-section-btn mt-3 mb-0" style="text-align: center;">
+            <a v-for="(filter, index) in filters" :id="'btn' + filter.label.replace(/\\s+/g, '')" @click="btnClick(filter)" class="btn btn-primary display-7" :class="{'filtro': filter.label === 'Brilho'}">
+                {{ filter.label }}
+            </a>
         </div>
         `,
         data: () => {
@@ -19,19 +15,18 @@ function createFilters(imageLab, filters) {
             }
         },
         mounted() {
-            console.log('filters',filters);
+            console.log('filters', filters);
             this.filters = filters
         },
         methods: {
-
             btnClick(filter) {
-                console.log('filter',filter);
+                console.log('filter', filter);
                 filter.method(imageLab)
             }
         }
     }
-    
-    createApp(buttons).mount('#buttons')    
+
+    createApp(buttons).mount('#buttons')
 }
 
 export default createFilters
