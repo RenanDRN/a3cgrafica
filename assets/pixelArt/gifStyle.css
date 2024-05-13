@@ -17,3 +17,10 @@
     height: 15px;
     border: 1px solid #000;
 }
+
+.gif-background {
+    background-image: url('../images/home-menu.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
