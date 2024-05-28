@@ -13,10 +13,10 @@
  PixelMath surgiu de um projeto de faculdade que tinha como objetivo correlacionar Matriz Matemática com Matriz Computacional.
 
 ## [Integrantes](#contributors)
-<li><a href="https://www.linkedin.com/in/lucasparra2003/"></a> Lucas Parra</li>
-<li><a href="https://www.linkedin.com/in/renan-dos-reis-negrão-96b556241/"></a> Renan dos Reis Negrão</li>
-<li><a href="https://www.linkedin.com/in/"></a> Rafael Macedo Barbosa</li>
-<li><a href="https://www.linkedin.com/in/milenaporto/"></a> Milena Porto Coyado</li>
-<li><a href="https://www.linkedin.com/in/"></a> Beatriz Soares</li>
+<li><a href="https://www.linkedin.com/in/lucasparra2003/"> Lucas Parra</a></li>
+<li><a href="https://www.linkedin.com/in/renan-dos-reis-negrão-96b556241/">Renan dos Reis Negrão</a> </li>
+<li><a href="https://www.linkedin.com/in/">Rafael Macedo Barbosa</a> </li>
+<li><a href="https://www.linkedin.com/in/milenaporto/">Milena Porto Coyado</a> </li>
+<li><a href="https://www.linkedin.com/in/">Beatriz Soares</a> </li>
 
 ![image](./assets/images/logo-extended.png) 
