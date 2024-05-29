@@ -12,9 +12,11 @@
 ## [Descrição](#project-description)
  PixelMath surgiu de um projeto de faculdade que tinha como objetivo correlacionar Matriz Matemática com Matriz Computacional.
 
-## [Como acessar?] (#acess-project)
+## [Como acessar?](#acess-project)
 
 Basta entrar no link a seguir: [MathPixel](https://a3cgrafica.vercel.app)
+
+Divirta-se! 😉
 
 ## [Integrantes](#contributors)
 <li><a href="https://www.linkedin.com/in/lucasparra2003/"> Lucas Parra</a></li>
